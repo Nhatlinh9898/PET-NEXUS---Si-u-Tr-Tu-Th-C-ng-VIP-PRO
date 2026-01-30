@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMNI NEXUS - Siêu App VIP PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Rajdhani', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+            },
+            colors: {
+              cyber: {
+                black: '#050507',
+                dark: '#0e0e14',
+                panel: '#15151e',
+                primary: '#00f0ff',   // Cyan
+                secondary: '#7000ff', // Purple
+                gold: '#ffd700',      // Luxury Accent
+                accent: '#ff003c',    // Red/Pink
+                text: '#e0e0e0',
+                dim: '#8a8a9b'
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'gradient': 'gradient 3s ease infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #00f0ff, 0 0 10px #00f0ff' },
+                '100%': { boxShadow: '0 0 20px #00f0ff, 0 0 30px #00f0ff' },
+              },
+              gradient: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050507;
+        color: #e0e0e0;
+        overflow-x: hidden;
+      }
+      .cyber-border {
+        position: relative;
+        background: #15151e; /* panel color */
+      }
+      .cyber-border::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border-radius: 12px;
+        padding: 1px;
+        background: linear-gradient(135deg, #7000ff, #00f0ff, #7000ff);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #0a0a0f; 
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #333344; 
+        border-radius: 3px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #00f0ff; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
